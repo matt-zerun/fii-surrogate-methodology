@@ -25,7 +25,7 @@ The five families are decision trees (DT), random forests (RF), support vector r
 
 The index combines three case-dependent diagnostics:
 
-\[ \mathrm{FII} = 0.4\,\mathrm{MVR} + 0.4\,\mathrm{Rough}_{norm} + 0.2\,\mathrm{ORV} \]
+[FII = 0.4 MVR + 0.4 Rough_norm + 0.2 ORV]
 
 FII is **not** a physical-validity test, an uncertainty estimator, or a general guarantee of suitability. Its interpretation requires fixed and explicit domain, units, constraints, output bounds, roughness reference and weights. The separate *auxiliary repeated-partition score* is **not the FII**.
 

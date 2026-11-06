@@ -1,0 +1,330 @@
+{
+  "notes": [
+    "Configuration labels follow Supplementary Tables S2a-S2e.",
+    "DT baseline and Variant 1 are duplicate parameterisations retained for workflow traceability.",
+    "kNN tuned and Variant 3 are duplicate parameterisations retained for workflow traceability.",
+    "Parameters omitted from a configuration retain the library defaults resolved by the archived environment."
+  ],
+  "models": [
+    {
+      "id": "SVR__baseline",
+      "family": "SVR",
+      "label": "baseline",
+      "params": {
+        "kernel": "rbf",
+        "C": 1.0,
+        "gamma": "scale",
+        "epsilon": 0.1
+      }
+    },
+    {
+      "id": "SVR__tuned",
+      "family": "SVR",
+      "label": "tuned",
+      "params": {
+        "kernel": "rbf",
+        "C": 1000.0,
+        "gamma": "scale",
+        "epsilon": 0.1
+      }
+    },
+    {
+      "id": "SVR__variant_1",
+      "family": "SVR",
+      "label": "variant_1",
+      "params": {
+        "kernel": "rbf",
+        "C": 0.1,
+        "gamma": "scale",
+        "epsilon": 0.001
+      }
+    },
+    {
+      "id": "SVR__variant_2",
+      "family": "SVR",
+      "label": "variant_2",
+      "params": {
+        "kernel": "rbf",
+        "C": 10.0,
+        "gamma": 0.01,
+        "epsilon": 0.001
+      }
+    },
+    {
+      "id": "SVR__variant_3",
+      "family": "SVR",
+      "label": "variant_3",
+      "params": {
+        "kernel": "rbf",
+        "C": 1000.0,
+        "gamma": 0.0001,
+        "epsilon": 0.1
+      }
+    },
+    {
+      "id": "DT__baseline",
+      "family": "DT",
+      "label": "baseline",
+      "params": {
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "DT__tuned",
+      "family": "DT",
+      "label": "tuned",
+      "params": {
+        "max_depth": 15,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "DT__variant_1",
+      "family": "DT",
+      "label": "variant_1",
+      "params": {
+        "max_depth": null,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "DT__variant_2",
+      "family": "DT",
+      "label": "variant_2",
+      "params": {
+        "max_depth": 10,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "DT__variant_3",
+      "family": "DT",
+      "label": "variant_3",
+      "params": {
+        "max_depth": 15,
+        "min_samples_split": 20,
+        "min_samples_leaf": 5,
+        "random_state": 42
+      }
+    },
+    {
+      "id": "RF__baseline",
+      "family": "RF",
+      "label": "baseline",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": null,
+        "max_features": 1.0,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42,
+        "n_jobs": -1
+      }
+    },
+    {
+      "id": "RF__tuned",
+      "family": "RF",
+      "label": "tuned",
+      "params": {
+        "n_estimators": 500,
+        "max_depth": null,
+        "max_features": "log2",
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42,
+        "n_jobs": -1
+      }
+    },
+    {
+      "id": "RF__variant_1",
+      "family": "RF",
+      "label": "variant_1",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": null,
+        "max_features": "sqrt",
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42,
+        "n_jobs": -1
+      }
+    },
+    {
+      "id": "RF__variant_2",
+      "family": "RF",
+      "label": "variant_2",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 10,
+        "max_features": "sqrt",
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "random_state": 42,
+        "n_jobs": -1
+      }
+    },
+    {
+      "id": "RF__variant_3",
+      "family": "RF",
+      "label": "variant_3",
+      "params": {
+        "n_estimators": 500,
+        "max_depth": 20,
+        "max_features": 0.5,
+        "min_samples_split": 10,
+        "min_samples_leaf": 1,
+        "random_state": 42,
+        "n_jobs": -1
+      }
+    },
+    {
+      "id": "XGB__baseline",
+      "family": "XGB",
+      "label": "baseline",
+      "params": {
+        "objective": "reg:squarederror",
+        "random_state": 42,
+        "verbosity": 0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "XGB__tuned",
+      "family": "XGB",
+      "label": "tuned",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 10,
+        "learning_rate": 0.1,
+        "subsample": 0.6,
+        "colsample_bytree": 1.0,
+        "reg_alpha": 0.0,
+        "reg_lambda": 2.0,
+        "objective": "reg:squarederror",
+        "random_state": 42,
+        "verbosity": 0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "XGB__variant_1",
+      "family": "XGB",
+      "label": "variant_1",
+      "params": {
+        "n_estimators": 100,
+        "max_depth": 3,
+        "learning_rate": 0.001,
+        "subsample": 0.6,
+        "colsample_bytree": 0.6,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "objective": "reg:squarederror",
+        "random_state": 42,
+        "verbosity": 0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "XGB__variant_2",
+      "family": "XGB",
+      "label": "variant_2",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "subsample": 0.6,
+        "colsample_bytree": 0.6,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "objective": "reg:squarederror",
+        "random_state": 42,
+        "verbosity": 0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "XGB__variant_3",
+      "family": "XGB",
+      "label": "variant_3",
+      "params": {
+        "n_estimators": 500,
+        "max_depth": 10,
+        "learning_rate": 0.1,
+        "subsample": 1.0,
+        "colsample_bytree": 1.0,
+        "reg_alpha": 0.1,
+        "reg_lambda": 2.0,
+        "objective": "reg:squarederror",
+        "random_state": 42,
+        "verbosity": 0,
+        "n_jobs": 1
+      }
+    },
+    {
+      "id": "KNN__baseline",
+      "family": "KNN",
+      "label": "baseline",
+      "params": {
+        "n_neighbors": 5,
+        "weights": "uniform",
+        "p": 2
+      }
+    },
+    {
+      "id": "KNN__tuned",
+      "family": "KNN",
+      "label": "tuned",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "p": 2
+      }
+    },
+    {
+      "id": "KNN__variant_1",
+      "family": "KNN",
+      "label": "variant_1",
+      "params": {
+        "n_neighbors": 1,
+        "weights": "uniform",
+        "p": 1
+      }
+    },
+    {
+      "id": "KNN__variant_2",
+      "family": "KNN",
+      "label": "variant_2",
+      "params": {
+        "n_neighbors": 7,
+        "weights": "uniform",
+        "p": 1
+      }
+    },
+    {
+      "id": "KNN__variant_3",
+      "family": "KNN",
+      "label": "variant_3",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "p": 2
+      }
+    }
+  ],
+  "representative": [
+    "KNN__variant_3",
+    "RF__tuned",
+    "XGB__tuned",
+    "DT__variant_3",
+    "SVR__variant_1"
+  ]
+}

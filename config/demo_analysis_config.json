@@ -1,0 +1,26 @@
+{
+  "filtering": {
+    "minimum_water_content_pct": 1.0
+  },
+  "main_split": {
+    "test_size": 0.2,
+    "random_state": 42
+  },
+  "surface": {
+    "grid_resolution": 40,
+    "domain": "complete_retained_predictor_ranges"
+  },
+  "fii": {
+    "weights": {
+      "mvr": 0.4,
+      "roughness": 0.4,
+      "orv": 0.2
+    },
+    "output_bounds": [
+      0.2,
+      5.0
+    ],
+    "roughness_reference_value": 1.0,
+    "roughness_reference_note": "Demonstration value used only for the fictional synthetic dataset. FII is context-dependent; an authorised study-specific run must use the fixed reference selected for that analysis and apply it unchanged to all configurations."
+  }
+}

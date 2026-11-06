@@ -1,0 +1,43 @@
+input:
+  path: data/synthetic_example/fii_synthetic_example.csv
+
+output:
+  directory: outputs/synthetic_example
+
+validation:
+  minimum_observations: 20
+  density_identity_abs_tolerance_mg_m3: 0.02
+  density_identity_rel_tolerance: 0.02
+
+filtering:
+  # Frozen reference-analysis rule; applied after canonical validation.
+  minimum_water_content_pct: 1.0
+
+models:
+  manifest: config/model_manifest.json
+
+main_split:
+  test_size: 0.2
+  random_state: 42
+
+surface:
+  grid_resolution: 40
+  domain: complete_retained_predictor_ranges
+
+fii:
+  weights:
+    mvr: 0.4
+    roughness: 0.4
+    orv: 0.2
+  output_bounds: [0.2, 5.0]
+  roughness_reference_value: 1.0
+  roughness_reference_note: >-
+    Demonstration value used only for the fictional synthetic dataset. An
+    authorised study-specific run must use its fixed analysis reference and
+    apply it unchanged to all configurations.
+
+repeated_partitions:
+  enabled: true
+  config: config/repeated_partition_config.json
+  # Use 30 to execute the complete auxiliary experiment.
+  max_splits: 3

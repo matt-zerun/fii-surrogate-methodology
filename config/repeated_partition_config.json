@@ -1,0 +1,87 @@
+{
+  "test_size": 0.2,
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129
+  ],
+  "grid_resolution": 150,
+  "output_bounds": [
+    0.2,
+    5.0
+  ],
+  "models": [
+    {
+      "family": "SVR",
+      "params": {
+        "kernel": "rbf",
+        "C": 10.0,
+        "gamma": "scale",
+        "epsilon": 0.01
+      }
+    },
+    {
+      "family": "RF",
+      "params": {
+        "n_estimators": 300,
+        "random_state": 0,
+        "n_jobs": -1
+      }
+    },
+    {
+      "family": "DT",
+      "params": {
+        "max_depth": 15,
+        "random_state": 0
+      }
+    },
+    {
+      "family": "KNN",
+      "params": {
+        "n_neighbors": 15,
+        "weights": "distance",
+        "p": 2
+      }
+    },
+    {
+      "family": "XGB",
+      "params": {
+        "n_estimators": 200,
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "objective": "reg:squarederror",
+        "random_state": 0,
+        "verbosity": 0,
+        "n_jobs": 1
+      }
+    }
+  ],
+  "note": "Experiment-specific configurations and an auxiliary score; not FII."
+}

@@ -1,0 +1,148 @@
+{
+  "cv": 5,
+  "scoring": "r2",
+  "random_state": 42,
+  "randomized_n_iter": 40,
+  "families": {
+    "SVR": {
+      "search": "randomized",
+      "parameters": {
+        "model__C": [
+          0.1,
+          1,
+          10,
+          100,
+          1000
+        ],
+        "model__gamma": [
+          "scale",
+          "auto",
+          0.1,
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "model__epsilon": [
+          0.001,
+          0.01,
+          0.01,
+          0.1
+        ],
+        "model__kernel": [
+          "rbf"
+        ]
+      }
+    },
+    "DT": {
+      "search": "grid",
+      "parameters": {
+        "max_depth": [
+          null,
+          5,
+          10,
+          15
+        ],
+        "min_samples_split": [
+          2,
+          5,
+          10,
+          20
+        ],
+        "min_samples_leaf": [
+          1,
+          2,
+          5
+        ]
+      }
+    },
+    "RF": {
+      "search": "randomized",
+      "parameters": {
+        "n_estimators": [
+          100,
+          200,
+          500
+        ],
+        "max_depth": [
+          null,
+          5,
+          10,
+          20
+        ],
+        "min_samples_split": [
+          2,
+          5,
+          10
+        ],
+        "max_features": [
+          "sqrt",
+          "log2",
+          0.5
+        ]
+      }
+    },
+    "XGB": {
+      "search": "randomized",
+      "parameters": {
+        "n_estimators": [
+          100,
+          200,
+          500
+        ],
+        "learning_rate": [
+          0.001,
+          0.01,
+          0.05,
+          0.1
+        ],
+        "max_depth": [
+          3,
+          5,
+          7,
+          10
+        ],
+        "subsample": [
+          0.6,
+          0.8,
+          1.0
+        ],
+        "colsample_bytree": [
+          0.6,
+          0.8,
+          1.0
+        ],
+        "reg_alpha": [
+          0,
+          0.01,
+          0.1
+        ],
+        "reg_lambda": [
+          1,
+          1.5,
+          2.0
+        ]
+      }
+    },
+    "KNN": {
+      "search": "grid",
+      "parameters": {
+        "model__n_neighbors": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          15
+        ],
+        "model__weights": [
+          "uniform",
+          "distance"
+        ],
+        "model__p": [
+          1,
+          2
+        ]
+      }
+    }
+  }
+}
